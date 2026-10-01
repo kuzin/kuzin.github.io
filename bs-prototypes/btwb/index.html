@@ -129,6 +129,8 @@
 
       // Same path, query and #section on the new site; anything outside bs-prototypes goes to its home page
       var path = location.pathname.indexOf('/bs-prototypes') === 0 ? location.pathname : '/bs-prototypes/'
+      // (the Asset Generator moved to its own repo, zoobean/bs-assets: its old page plays its demo video instead)
+      if (path.indexOf('/bs-prototypes/challenge-asset-studio') === 0) path = '/bs-prototypes/watch/asset-generator-demo/'
       var target = NEW_ORIGIN + path + location.search + location.hash
       var link = document.getElementById('new-url')
       link.textContent = target

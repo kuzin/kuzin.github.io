@@ -32,6 +32,7 @@ const page = (path) => {
 }
 const paths = new Set(['bs-prototypes/index.html'])
 for (const p of PROTOTYPES) paths.add(`${p.href.replace(/^\//, '')}index.html`)
+paths.add('bs-prototypes/challenge-asset-studio/index.html') // (moved to zoobean/bs-assets: its notice plays the demo video)
 for (const v of videos) paths.add(`bs-prototypes/watch/${v.id}/index.html`)
 for (const p of paths) page(p)
 page('404.html')
