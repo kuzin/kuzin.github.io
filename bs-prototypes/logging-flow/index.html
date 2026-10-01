@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex" />
+    <title>This page has moved · bs-prototypes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Nunito+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap"
+    />
+    <style>
+      :root {
+        --bg: #eef4f6;
+        --card: #ffffff;
+        --ink: #1c2b3a;
+        --muted: #586a7b;
+        --line: #d7e1e8;
+        --navy: #0b2a4a;
+        --teal: #0a8597;
+        --teal-ink: #ffffff;
+        --teal-soft: #e2f3f5;
+        --amber: #9a5205;
+        --amber-soft: #fdf1df;
+        color-scheme: light;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0e1620;
+          --card: #142130;
+          --ink: #e4ecf3;
+          --muted: #98a9b9;
+          --line: #263849;
+          --navy: #cfe2f4;
+          --teal: #45c6d8;
+          --teal-ink: #062027;
+          --teal-soft: #12313a;
+          --amber: #f0b46a;
+          --amber-soft: #382814;
+          color-scheme: dark;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px 16px;
+        background: var(--bg);
+        color: var(--ink);
+        font: 16px/1.55 'Nunito Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      }
+      main {
+        width: 100%;
+        max-width: 34rem;
+        display: grid;
+        gap: 16px;
+      }
+      .brand {
+        font: 800 1rem 'Nunito', 'Nunito Sans', system-ui, sans-serif;
+        color: var(--navy);
+        letter-spacing: 0.01em;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 28px 24px;
+        display: grid;
+        gap: 18px;
+      }
+      .eyebrow {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: var(--teal);
+      }
+      h1 {
+        margin: 0;
+        font: 800 clamp(1.6rem, 5vw, 2rem) / 1.2 'Nunito', 'Nunito Sans', system-ui, sans-serif;
+        color: var(--navy);
+        text-wrap: balance;
+      }
+      p {
+        margin: 0;
+      }
+      .label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--muted);
+      }
+      .link-row {
+        display: flex;
+        gap: 8px;
+        align-items: stretch;
+      }
+      .url {
+        flex: 1;
+        min-width: 0;
+        font: 0.9rem/1.4 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+        background: var(--teal-soft);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 10px 12px;
+        overflow-wrap: anywhere;
+        user-select: all;
+      }
+      button,
+      .primary {
+        font: 700 0.95rem 'Nunito Sans', system-ui, sans-serif;
+        border-radius: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .copy {
+        flex: none;
+        border: 1px solid var(--line);
+        background: var(--card);
+        color: var(--ink);
+        padding: 0 14px;
+        min-width: 6.5rem;
+      }
+      .primary {
+        background: var(--teal);
+        color: var(--teal-ink);
+        border: 0;
+        padding: 14px 18px;
+        font-size: 1rem;
+      }
+      button:focus-visible,
+      .primary:focus-visible {
+        outline: 3px solid var(--teal);
+        outline-offset: 2px;
+      }
+      .notice {
+        background: var(--amber-soft);
+        color: var(--ink);
+        border-radius: 10px;
+        padding: 12px 14px;
+        font-size: 0.95rem;
+      }
+      .notice strong {
+        color: var(--amber);
+      }
+      .small {
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+      @media (max-width: 420px) {
+        .link-row {
+          flex-direction: column;
+        }
+        .copy {
+          padding: 10px 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="brand">bs-prototypes</div>
+      <div class="card">
+        <div class="eyebrow">This link has moved</div>
+        <h1>bs-prototypes has a new home</h1>
+        <div>
+          <p class="label">This page is now at:</p>
+        </div>
+        <div class="link-row">
+          <div class="url" id="new-url">https://zoobean.github.io/bs-prototypes/</div>
+          <button type="button" class="copy" id="copy">Copy link</button>
+        </div>
+        <a class="primary" id="open" href="https://zoobean.github.io/bs-prototypes/">Open the new page</a>
+        <p class="notice">
+          This old address stops working on <strong id="date">October 31, 2026</strong>. Please update your
+          bookmarks and any links you've shared.
+        </p>
+        <p class="small">The prototypes and their paths are the same. Only the start of the address changed.</p>
+      </div>
+    </main>
+    <script>
+      // The day the old addresses stop working: set when the repo moves (the move date + 30 days)
+      var SHUTS_DOWN_ON = '2026-10-31'
+      var NEW_ORIGIN = 'https://zoobean.github.io'
+
+      // Same path, query and #section on the new site; anything outside bs-prototypes goes to its home page
+      var path = location.pathname.indexOf('/bs-prototypes') === 0 ? location.pathname : '/bs-prototypes/'
+      var target = NEW_ORIGIN + path + location.search + location.hash
+      document.getElementById('new-url').textContent = target
+      document.getElementById('open').href = target
+      var day = new Date(SHUTS_DOWN_ON + 'T12:00:00')
+      document.getElementById('date').textContent = day.toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+      })
+
+      var copy = document.getElementById('copy')
+      copy.addEventListener('click', function () {
+        var done = function () {
+          copy.textContent = 'Copied'
+          setTimeout(function () {
+            copy.textContent = 'Copy link'
+          }, 2000)
+        }
+        var select = function () {
+          var range = document.createRange()
+          range.selectNodeContents(document.getElementById('new-url'))
+          var selection = window.getSelection()
+          selection.removeAllRanges()
+          selection.addRange(range)
+          copy.textContent = 'Press ⌘C'
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText)
+          navigator.clipboard.writeText(target).then(done, select)
+        else select()
+      })
+    </script>
+  </body>
+</html>
