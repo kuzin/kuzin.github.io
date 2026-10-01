@@ -2,45 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
-    <title>This page has moved · bs-prototypes</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Nunito+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap"
-    />
+    <title>This page has moved</title>
+    <!-- Beanstack's typeface, from the same Adobe Fonts kit as the prototypes -->
+    <link rel="stylesheet" href="https://use.typekit.net/kus1pku.css" />
     <style>
+      /* The bs-patterns design system's own values (components/ui/tokens.css, Button.css, the Banner's warning level) */
       :root {
-        --bg: #eef4f6;
-        --card: #ffffff;
-        --ink: #1c2b3a;
-        --muted: #586a7b;
-        --line: #d7e1e8;
-        --navy: #0b2a4a;
-        --teal: #0a8597;
-        --teal-ink: #ffffff;
-        --teal-soft: #e2f3f5;
-        --amber: #9a5205;
-        --amber-soft: #fdf1df;
+        --c-bg: #f8f8f8;
+        --c-surface: #fff;
+        --c-border: #eaeaea;
+        --c-gray-300: #dedede;
+        --c-text: #424242;
+        --c-text-light: #656565;
+        --c-accent: #326ece;
+        --c-accent-active: #2858a5;
+        --warning-bg: #ffe091;
+        --warning-ink: #895a04;
+        --font-sans: 'museo-sans-rounded', 'Nunito', 'Trebuchet MS', sans-serif;
         color-scheme: light;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #0e1620;
-          --card: #142130;
-          --ink: #e4ecf3;
-          --muted: #98a9b9;
-          --line: #263849;
-          --navy: #cfe2f4;
-          --teal: #45c6d8;
-          --teal-ink: #062027;
-          --teal-soft: #12313a;
-          --amber: #f0b46a;
-          --amber-soft: #382814;
-          color-scheme: dark;
-        }
       }
       * {
         box-sizing: border-box;
@@ -51,177 +32,131 @@
         display: grid;
         place-items: center;
         padding: 24px 16px;
-        background: var(--bg);
-        color: var(--ink);
-        font: 16px/1.55 'Nunito Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+        background: var(--c-bg);
+        color: var(--c-text);
+        font: 500 16px/1.5 var(--font-sans);
       }
       main {
         width: 100%;
-        max-width: 34rem;
+        max-width: 32rem;
+        background: var(--c-surface);
+        border: 1px solid var(--c-border);
+        border-radius: 12px;
+        padding: 32px 28px;
         display: grid;
-        gap: 16px;
-      }
-      .brand {
-        font: 800 1rem 'Nunito', 'Nunito Sans', system-ui, sans-serif;
-        color: var(--navy);
-        letter-spacing: 0.01em;
-      }
-      .card {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        padding: 28px 24px;
-        display: grid;
-        gap: 18px;
-      }
-      .eyebrow {
-        font-size: 0.78rem;
-        font-weight: 700;
-        letter-spacing: 0.07em;
-        text-transform: uppercase;
-        color: var(--teal);
+        gap: 20px;
       }
       h1 {
         margin: 0;
-        font: 800 clamp(1.6rem, 5vw, 2rem) / 1.2 'Nunito', 'Nunito Sans', system-ui, sans-serif;
-        color: var(--navy);
-        text-wrap: balance;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.25;
       }
-      p {
-        margin: 0;
-      }
-      .label {
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: var(--muted);
-      }
-      .link-row {
-        display: flex;
-        gap: 8px;
-        align-items: stretch;
-      }
-      .url {
-        flex: 1;
-        min-width: 0;
-        font: 0.9rem/1.4 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
-        background: var(--teal-soft);
-        border: 1px solid var(--line);
-        border-radius: 10px;
-        padding: 10px 12px;
+      .link {
+        color: var(--c-accent);
+        font-size: 15px;
         overflow-wrap: anywhere;
-        user-select: all;
       }
-      button,
-      .primary {
-        font: 700 0.95rem 'Nunito Sans', system-ui, sans-serif;
-        border-radius: 10px;
-        cursor: pointer;
-        text-decoration: none;
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      /* .btn .btn--md */
+      .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-      }
-      .copy {
-        flex: none;
-        border: 1px solid var(--line);
-        background: var(--card);
-        color: var(--ink);
-        padding: 0 14px;
-        min-width: 6.5rem;
-      }
-      .primary {
-        background: var(--teal);
-        color: var(--teal-ink);
-        border: 0;
-        padding: 14px 18px;
-        font-size: 1rem;
-      }
-      button:focus-visible,
-      .primary:focus-visible {
-        outline: 3px solid var(--teal);
-        outline-offset: 2px;
-      }
-      .notice {
-        background: var(--amber-soft);
-        color: var(--ink);
+        height: 44px;
+        padding: 0 20px;
+        border: 2px solid transparent;
         border-radius: 10px;
-        padding: 12px 14px;
-        font-size: 0.95rem;
+        font: 700 15px var(--font-sans);
+        text-decoration: none;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.13s ease;
       }
-      .notice strong {
-        color: var(--amber);
+      .btn:active {
+        transform: scale(0.96);
       }
-      .small {
-        font-size: 0.85rem;
-        color: var(--muted);
+      .btn:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px #5599e1;
       }
-      @media (max-width: 420px) {
-        .link-row {
-          flex-direction: column;
-        }
-        .copy {
-          padding: 10px 14px;
-        }
+      .btn--primary {
+        background: var(--c-accent);
+        border-color: var(--c-accent);
+        color: #fff;
+      }
+      .btn--primary:hover {
+        background: var(--c-accent-active);
+        border-color: var(--c-accent-active);
+      }
+      .btn--secondary {
+        background: transparent;
+        border-color: var(--c-gray-300);
+        color: var(--c-text);
+      }
+      /* .bnr .bnr--warning */
+      .bnr {
+        margin: 0;
+        padding: 12px 20px;
+        border-radius: 10px;
+        background: var(--warning-bg);
+        color: var(--warning-ink);
+        font-size: 15px;
+        line-height: 1.5;
       }
     </style>
   </head>
   <body>
     <main>
-      <div class="brand">bs-prototypes</div>
-      <div class="card">
-        <div class="eyebrow">This link has moved</div>
-        <h1>bs-prototypes has a new home</h1>
-        <div>
-          <p class="label">This page is now at:</p>
-        </div>
-        <div class="link-row">
-          <div class="url" id="new-url">https://zoobean.github.io/bs-prototypes/</div>
-          <button type="button" class="copy" id="copy">Copy link</button>
-        </div>
-        <a class="primary" id="open" href="https://zoobean.github.io/bs-prototypes/">Open the new page</a>
-        <p class="notice">
-          This old address stops working on <strong id="date">October 31, 2026</strong>. Please update your
-          bookmarks and any links you've shared.
-        </p>
-        <p class="small">The prototypes and their paths are the same. Only the start of the address changed.</p>
+      <h1>This page has moved</h1>
+      <a class="link" id="new-url" href="https://zoobean.github.io/bs-prototypes/"
+        >https://zoobean.github.io/bs-prototypes/</a
+      >
+      <div class="actions">
+        <a class="btn btn--primary" id="open" href="https://zoobean.github.io/bs-prototypes/">Open the new page</a>
+        <button type="button" class="btn btn--secondary" id="copy">Copy link</button>
       </div>
+      <p class="bnr">This old link stops working on <span id="date">October 31, 2026</span>.</p>
     </main>
     <script>
-      // The day the old addresses stop working: set when the repo moves (the move date + 30 days)
+      // The day the old addresses stop working: set by tools/build.mjs --shuts-down (the move date + 30 days)
       var SHUTS_DOWN_ON = '2026-10-31'
       var NEW_ORIGIN = 'https://zoobean.github.io'
 
       // Same path, query and #section on the new site; anything outside bs-prototypes goes to its home page
       var path = location.pathname.indexOf('/bs-prototypes') === 0 ? location.pathname : '/bs-prototypes/'
       var target = NEW_ORIGIN + path + location.search + location.hash
-      document.getElementById('new-url').textContent = target
+      var link = document.getElementById('new-url')
+      link.textContent = target
+      link.href = target
       document.getElementById('open').href = target
-      var day = new Date(SHUTS_DOWN_ON + 'T12:00:00')
-      document.getElementById('date').textContent = day.toLocaleDateString('en-US', {
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric',
-      })
+      document.getElementById('date').textContent = new Date(SHUTS_DOWN_ON + 'T12:00:00').toLocaleDateString(
+        'en-US',
+        { month: 'long', day: 'numeric', year: 'numeric' },
+      )
 
       var copy = document.getElementById('copy')
       copy.addEventListener('click', function () {
-        var done = function () {
+        var copied = function () {
           copy.textContent = 'Copied'
           setTimeout(function () {
             copy.textContent = 'Copy link'
           }, 2000)
         }
-        var select = function () {
+        var selectIt = function () {
           var range = document.createRange()
-          range.selectNodeContents(document.getElementById('new-url'))
+          range.selectNodeContents(link)
           var selection = window.getSelection()
           selection.removeAllRanges()
           selection.addRange(range)
-          copy.textContent = 'Press ⌘C'
         }
         if (navigator.clipboard && navigator.clipboard.writeText)
-          navigator.clipboard.writeText(target).then(done, select)
-        else select()
+          navigator.clipboard.writeText(target).then(copied, selectIt)
+        else selectIt()
       })
     </script>
   </body>
