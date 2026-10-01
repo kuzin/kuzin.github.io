@@ -21,8 +21,8 @@ const template = readFileSync(join(root, 'tools/template.html'), 'utf8').replace
   /var SHUTS_DOWN_ON = '[^']*'/,
   `var SHUTS_DOWN_ON = '${date}'`,
 )
-const { PROTOTYPES } = await import(pathToFileURL(join(repo, 'components/prototypes.js')).href)
-const videos = JSON.parse(readFileSync(join(repo, 'components/demoVideos.json'), 'utf8'))
+const { PROTOTYPES } = await import(pathToFileURL(join(repo, 'site/prototypes.js')).href)
+const videos = JSON.parse(readFileSync(join(repo, 'site/demoVideos.json'), 'utf8'))
 // (only what this script makes is replaced: the README and tools stay)
 rmSync(join(root, 'bs-prototypes'), { recursive: true, force: true })
 const page = (path) => {
